@@ -21,11 +21,7 @@ class MessageQueue
      */
     public static function newMQ($type, $option = [])
     {
-        if ($type == 'redis') {
-            $class = "\\liupei\\messageQueue\\driver" . ucwords($type);
-            return new $class($option);
-        } else {
-            return null;
-        }
+        $class = "\\liupei\\messageQueue\\driver\\" . ucwords($type);
+        return new $class($option);
     }
 }

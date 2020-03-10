@@ -41,6 +41,6 @@ class Redis extends Base
      */
     public function add($queueName, $key, $value)
     {
-        return $this->redis->xAdd($queueName, "*", [$key => $value]);
+        return $this->redis->rawCommand("xadd", $queueName, "*", $key ,$value);
     }
 }
