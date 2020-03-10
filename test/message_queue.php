@@ -1,7 +1,6 @@
-# messageQueue
-
-## 用例
-```php
+<?php
+//phpinfo();
+//die();
 include '../vendor/autoload.php';
 
 $mq = \liupei\messageQueue\MessageQueue::newMQ('Redis', [
@@ -11,4 +10,3 @@ $mq = \liupei\messageQueue\MessageQueue::newMQ('Redis', [
     'select' => 0
 ]);
 var_dump($mq->add('test', "name", "liupei"));
-```
